@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>OTT 목록</title>
+</head>
+<body>
+  <h1>등록된 OTT 리스트</h1>
+  <ul id="ottList"></ul>
+
+  <script>
+    fetch('/api/ott')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('ottList');
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item.otype;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

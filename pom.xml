@@ -53,6 +53,12 @@
       <scope>runtime</scope>
       <optional>true</optional>
     </dependency>
+    
+    <!-- Thymeleaf 템플릿 엔진 -->
+	<dependency>
+	  <groupId>org.springframework.boot</groupId>
+	  <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
 
     <!-- Test -->
     <dependency>

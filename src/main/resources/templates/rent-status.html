@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>내 대여 현황</title>
+</head>
+<body>
+  <h1>대여 현황</h1>
+  <ul id="rentList"></ul>
+
+  <script>
+    const userno = localStorage.getItem('userno');
+    fetch(`/api/rent/user/${userno}`)
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('rentList');
+        data.forEach(r => {
+          const li = document.createElement('li');
+          li.textContent = `${r.otype} - ${r.oaccema} (${r.rstart} ~ ${r.rexpiry})`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>

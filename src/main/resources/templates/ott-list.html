@@ -1,24 +1,105 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <title>OTT 목록</title>
-</head>
-<body>
-  <h1>등록된 OTT 리스트</h1>
-  <ul id="ottList"></ul>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/vars.css}">
 
-  <script>
-    fetch('/api/ott')
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById('ottList');
-        data.forEach(item => {
-          const li = document.createElement('li');
-          li.textContent = item.otype;
-          list.appendChild(li);
-        });
-      });
-  </script>
-</body>
+    <style>
+      a,
+      button,
+      input,
+      select,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        background: none;
+
+        -webkit-font-smoothing: antialiased;
+      }
+
+      menu,
+      ol,
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card-grid-content-list">
+      <div class="text-content-heading">
+        <div class="heading">제공 플랫폼</div>
+        <div class="subheading">platform</div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <img class="image" src="image0.png" />
+          <div class="body">
+            <div class="text">
+              <div class="title">Netflix</div>
+              <div
+                class="body-text-for-whatever-you-d-like-to-say-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
+              >
+                20000원 /4 =&gt; 5000원
+              </div>
+            </div>
+            <div class="button-group">
+              <div class="button">
+                <div class="button2">공유구독하기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="image" src="image1.png" />
+          <div class="body">
+            <div class="text">
+              <div class="title">Disney+</div>
+              <div
+                class="body-text-for-whatever-you-d-like-to-say-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
+              >
+                20000원 /4 =&gt; 5000원
+              </div>
+            </div>
+            <div class="button-group">
+              <div class="button">
+                <div class="button2">공유구독하기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img class="image" src="image2.png" />
+          <div class="body">
+            <div class="text">
+              <div class="title">Watcha</div>
+              <div
+                class="body-text-for-whatever-you-d-like-to-say-add-main-takeaway-points-quotes-anecdotes-or-even-a-very-very-short-story"
+              >
+                20000원 /4 =&gt; 5000원
+              </div>
+            </div>
+            <div class="button-group">
+              <div class="button">
+                <div class="button2">공유구독하기</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

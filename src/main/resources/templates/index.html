@@ -2,11 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to OTT Rent</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>OTT 렌탈 플랫폼</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
+<!-- 상단 네비게이션 바 -->
+<nav>
+    <a th:href="@{/}">홈</a>
+    <a th:href="@{/login}">로그인</a>
+    <a th:href="@{/signup}">회원가입</a>
+    <a th:href="@{/rent/list}">렌트 목록</a>
+    <a th:href="@{/ott/list}">OTT 목록</a>
+</nav>
+
+<!-- 본문 내용 -->
+<div class="content">
     <h1>OTT 렌탈 서비스에 오신 것을 환영합니다</h1>
     <p>로그인, 회원가입, 렌트 등의 기능은 상단 메뉴에서 이용 가능합니다.</p>
+</div>
+
 </body>
 </html>

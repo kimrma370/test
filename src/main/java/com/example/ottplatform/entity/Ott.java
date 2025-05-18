@@ -12,8 +12,8 @@ import lombok.*;
 public class Ott {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer ottno;
 
-    private String name;
-    private String description;
+    @Column(nullable = false, unique = true)
+    private String otype;
 }

@@ -26,4 +26,3 @@ public class OttController {
         return "ott-list";  // templates/ott/list.html
     }
 }
-

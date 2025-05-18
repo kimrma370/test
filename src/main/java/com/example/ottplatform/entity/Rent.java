@@ -10,12 +10,17 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Rent {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long rentno;
 
-    private Long userId;
-    private Long ottId;
-    private String rentDate;
-    private String returnDate;
+    @Column(nullable = false)
+    private Long userno;
+
+    @Column(nullable = false)
+    private Long oaccno;
+
+    private String rstart;
+    private String rexpiry;
 }

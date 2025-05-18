@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class RentDto {
-    private Long id;
-    private Long userId;
-    private Long ottId;
-    private String rentDate;
-    private String returnDate;
+    private Long rentno;
+    private String otype;
+    private String oaccema;
+    private String rstart;
+    private String rexpiry;
 }

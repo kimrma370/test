@@ -3,6 +3,8 @@ package com.example.repository;
 import com.example.ottplatform.entity.Rent;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface RentRepository extends JpaRepository<Rent, Long> {
-    // 추가적인 쿼리 메소드 정의 가능
+    List<Rent> findByUserno(Long userno);
 }

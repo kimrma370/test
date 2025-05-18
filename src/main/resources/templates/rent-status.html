@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>내 대여 현황</title>
+    <title>내 대여 현황</title>
 </head>
 <body>
-  <h1>대여 현황</h1>
-  <ul id="rentList"></ul>
+    <h1>내 대여 현황</h1>
+    <ul>
+        <li th:each="rent : ${rentList}">
+            OTT: <span th:text="${rent.otype}">OTT명</span> /
+            이메일: <span th:text="${rent.oaccema}">이메일</span> /
+            시작일: <span th:text="${rent.rstart}">시작일</span> /
+            만료일: <span th:text="${rent.rexpiry}">만료일</span>
 
-  <script>
-    const userno = localStorage.getItem('userno');
-    fetch(`/api/rent/user/${userno}`)
-      .then(res => res.json())
-      .then(data => {
-        const list = document.getElementById('rentList');
-        data.forEach(r => {
-          const li = document.createElement('li');
-          li.textContent = `${r.otype} - ${r.oaccema} (${r.rstart} ~ ${r.rexpiry})`;
-          list.appendChild(li);
-        });
-      });
-  </script>
+            <form th:action="@{/rent/cancel}" method="post" style="display:inline;">
+                <input type="hidden" name="rentno" th:value="${rent.rentno}" />
+                <input type="hidden" name="userno" th:value="${userno}" />
+                <button type="submit">공유 구독 취소</button>
+            </form>
+        </li>
+    </ul>
 </body>
 </html>

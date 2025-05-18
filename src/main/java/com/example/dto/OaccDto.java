@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class OaccDto {
-    private Long id;
-    private String accountNumber;
-    private String accountType;
-    private String status;
+    private Long oaccno;
+    private String oaccema;
+    private String oaccpw;
+    private String otype; 
 }

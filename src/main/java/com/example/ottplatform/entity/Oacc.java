@@ -10,11 +10,15 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Oacc {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long oaccno;
 
-    private String accountNumber;
-    private String accountType;
-    private String status;
+    @ManyToOne
+    @JoinColumn(name = "ottno", nullable = false)
+    private Ott ott;
+
+    private String oaccema;
+    private String oaccpw;
 }
